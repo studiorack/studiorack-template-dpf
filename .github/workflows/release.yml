@@ -80,7 +80,7 @@ jobs:
           cmake \
             -G "${{ matrix.generator }}" \
             -DCMAKE_BUILD_TYPE=Release \
-            -S ./dpf3sdk \
+            -S ./dpfsdk \
             -B ./build
           cmake --build ./build --config Release
 
