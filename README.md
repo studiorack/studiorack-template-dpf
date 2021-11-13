@@ -44,17 +44,37 @@ Todo
 
 ## Build (manual)
 
-Compile the DPF framework example plugins using:
+Depending on the the operating system you are on/building for, swap the generator string in the build commands:
 
-    make -C ./dpfsdk
+* Linux: "Unix Makefiles"
+* MacOS: "Xcode"
+* Windows: "Visual Studio 16 2019"
+
+Compile a development version of the plugin using:
+
+    cmake \
+      -G "Xcode" \
+      -DCMAKE_BUILD_TYPE=Debug \
+      -S ./dpfsdk \
+      -B ./build
+    cmake --build ./build --config Debug
 
 View the built plugin files at:
 
-    ./dpfsdk/bin
+    ./build/bin
+
+Build the final plugin binaries using:
+
+    cmake \
+      -G "Xcode" \
+      -DCMAKE_BUILD_TYPE=Release \
+      -S ./dpfsdk \
+      -B ./build
+    cmake --build ./build --config Release
 
 Copy any additional metadata files:
 
-    cp -v ./src/assets/* ./dpfsdk/bin
+    cp -v ./src/assets/* ./build/bin
 
 For metadata generation as json use the studiorack-cli:
 
@@ -62,11 +82,11 @@ For metadata generation as json use the studiorack-cli:
 
 Validate your plugin:
 
-    studiorack validate "./dpfsdk/bin/**/*.{vst,vst3}"
+    studiorack validate "./build/bin/**/*.{vst,vst3}"
 
 Convert and enrich validator report metadata into json:
 
-    studiorack validate "./dpfsdk/bin/**/*.{vst,vst3}" --json
+    studiorack validate "./build/bin/**/*.{vst,vst3}" --json
 
 
 ## Build (automatic)
