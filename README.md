@@ -1,5 +1,5 @@
-# studiorack-plugin-dpf
-![Release](https://github.com/studiorack/studiorack-plugin-dpf/workflows/Release/badge.svg)
+# studiorack-template-dpf
+![Release](https://github.com/studiorack/studiorack-template-dpf/workflows/Release/badge.svg)
 
 Audio plugin starter template using [DPF framework](https://github.com/DISTRHO/DPF) to build binaries using:
 
