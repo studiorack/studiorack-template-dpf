@@ -27,7 +27,7 @@ jobs:
   build_release:
     name: Build release
     needs: create_release
-    uses: studiorack/studiorack-workflows/.github/workflows/dfp.yml@main
+    uses: studiorack/studiorack-workflows/.github/workflows/dpf.yml@main
     with:
       release_id: ${{ needs.create_release.outputs.upload_id }}
       release_url: ${{ needs.create_release.outputs.upload_url }}
