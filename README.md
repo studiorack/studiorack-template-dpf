@@ -55,7 +55,7 @@ Compile a development version of the plugin using:
     cmake \
       -G "Xcode" \
       -DCMAKE_BUILD_TYPE=Debug \
-      -S ./dpfsdk \
+      -S ./sdk \
       -B ./build
     cmake --build ./build --config Debug
 
@@ -68,7 +68,7 @@ Build the final plugin binaries using:
     cmake \
       -G "Xcode" \
       -DCMAKE_BUILD_TYPE=Release \
-      -S ./dpfsdk \
+      -S ./sdk \
       -B ./build
     cmake --build ./build --config Release
 
